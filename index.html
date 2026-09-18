@@ -23,7 +23,25 @@
     </header>
 
     <main class="page-shell" id="top">
-      <section class="paper-header" id="overview">
+      <div class="page-layout">
+        <aside class="toc" aria-label="Contents">
+          <p class="toc-title">Contents</p>
+          <a class="toc-link active" href="#summary">Summary Video</a>
+          <a class="toc-link" href="#abstract">Abstract</a>
+          <a class="toc-link" href="#method">Method Overview</a>
+          <a class="toc-link toc-subitem" href="#method">Particle Visual Effects</a>
+          <a class="toc-link toc-subitem" href="#method">Hybrid Rendering</a>
+          <a class="toc-link toc-subitem" href="#method">Parallel Simulation</a>
+          <a class="toc-link" href="#phenomena">Dynamic Phenomena</a>
+          <a class="toc-link" href="#tasks">Task Benchmark</a>
+          <a class="toc-link" href="#visualizations">Task Visualizations</a>
+          <a class="toc-link" href="#scenes">Gaussian Scenes</a>
+          <a class="toc-link" href="#experiments">Experiments</a>
+          <a class="toc-link" href="#resources">Resources</a>
+        </aside>
+
+        <div class="main-column">
+          <section class="paper-header" id="overview">
         <p class="venue-label">Anonymous submission · Robotics benchmark</p>
         <h1><span>AutoBio+:</span> Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories</h1>
         <p class="authors">Anonymous Authors</p>
@@ -34,29 +52,15 @@
           <button class="resource-pill" type="button" disabled><span>↗</span> arXiv <small>coming soon</small></button>
         </div>
         <p class="paper-note">AutoBio+ = a realistic, parallelizable benchmark for dexterous manipulation in biological laboratories.</p>
-      </section>
+          </section>
 
-      <div class="teaser-figure" aria-label="Overview figure placeholder">
+          <div class="teaser-figure" aria-label="Overview figure placeholder">
         <div class="teaser-art"><span class="teaser-chip">14 tasks</span><span class="teaser-chip">4 embodiments</span><span class="teaser-chip">3 phenomena</span><span class="teaser-chip">6 Gaussian scenes</span><div class="teaser-center">AutoBio<span>+</span></div></div>
         <p><strong>Overview of AutoBio+.</strong> A benchmark combining interactive simulated foregrounds, 3D Gaussian Splatting backgrounds, dynamic visual phenomena, and parallel policy evaluation.</p>
         <code>Overview figure placeholder · docs/media/overview.png</code>
-      </div>
+          </div>
 
-      <div class="content-layout">
-        <aside class="toc" aria-label="Contents">
-          <p class="toc-title">Contents</p>
-          <a class="toc-link active" href="#summary">Summary Video</a>
-          <a class="toc-link" href="#abstract">Abstract</a>
-          <a class="toc-link" href="#method">Method Overview</a>
-          <a class="toc-link" href="#phenomena">Dynamic Phenomena</a>
-          <a class="toc-link" href="#tasks">Task Benchmark</a>
-          <a class="toc-link" href="#visualizations">Task Visualizations</a>
-          <a class="toc-link" href="#scenes">Gaussian Scenes</a>
-          <a class="toc-link" href="#experiments">Experiments</a>
-          <a class="toc-link" href="#resources">Resources</a>
-        </aside>
-
-        <article class="article">
+          <article class="article">
           <section class="content-section summary-section" id="summary">
             <h2>Summary Video</h2>
             <p class="section-caption">A short overview of the benchmark and its realistic laboratory environments.</p>
@@ -135,7 +139,8 @@
           </section>
 
           <footer class="site-footer"><span>AutoBio+ · Anonymous for review</span><a href="#top">Back to top ↑</a></footer>
-        </article>
+          </article>
+        </div>
       </div>
     </main>
     <script src="app.js"></script>

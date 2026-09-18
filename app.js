@@ -21,7 +21,7 @@ const sections = tocLinks
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
-    tocLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+    tocLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}` && !link.classList.contains('toc-subitem')));
   });
 }, { rootMargin: '-18% 0px -68% 0px', threshold: 0 });
 
