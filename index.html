@@ -3,158 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="AutoBio+: benchmarking dexterous manipulation with dynamic experimental phenomena in realistic laboratories." />
-    <meta name="theme-color" content="#f5f2eb" />
-    <title>AutoBio+ | Realistic Laboratory Manipulation Benchmark</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c4b46'/%3E%3Cpath d='M17 42c4-14 10-22 15-22s11 8 15 22' fill='none' stroke='%23f5f2eb' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='20' r='4' fill='%23e89062'/%3E%3C/svg%3E" />
+    <meta name="description" content="AutoBio+: Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories." />
+    <title>AutoBio+ | Project Page</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b78b8'/%3E%3Cpath d='M16 43 28 18h8l12 25h-8l-3-7H27l-3 7zM30 30h5l-2.5-6z' fill='white'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar" id="top">
-        <a class="brand" href="#top" aria-label="AutoBio+ home"><span class="brand-mark">A+</span><span>AutoBio+</span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-        <nav class="topnav" id="site-nav" aria-label="Primary navigation">
-          <a href="#overview">Overview</a>
-          <a href="#phenomena">Phenomena</a>
-          <a href="#benchmark">Benchmark</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-brand" href="#top"><span class="brand-mark">A+</span> AutoBio+</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Contents</button>
+        <nav class="top-nav" id="site-nav" aria-label="Project navigation">
+          <a href="#summary">Summary</a>
+          <a href="#method">Method</a>
+          <a href="#tasks">Tasks</a>
           <a href="#visualizations">Visualizations</a>
         </nav>
-        <a class="top-action" href="#resources">Resources <span aria-hidden="true">↗</span></a>
-      </header>
+      </div>
+    </header>
 
-      <main>
-        <section class="hero" id="overview">
-          <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Anonymous submission · Robotics benchmark</p>
-            <h1><span class="title-accent">AutoBio+</span>: Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories</h1>
-            <p class="authors">Anonymous Authors</p>
-            <p class="affiliations">Double-blind review · Supplementary materials will be linked here</p>
-            <div class="resource-row" id="resources">
-              <button class="resource-pill placeholder" type="button" disabled><span class="pill-icon">▧</span> Appendix <small>soon</small></button>
-              <button class="resource-pill placeholder" type="button" disabled><span class="pill-icon">⌘</span> Code <small>soon</small></button>
-              <button class="resource-pill placeholder" type="button" disabled><span class="pill-icon">↗</span> arXiv <small>soon</small></button>
-            </div>
-          </div>
-          <div class="hero-art" aria-label="Placeholder for the AutoBio+ overview figure">
-            <div class="lab-orbit orbit-one"></div>
-            <div class="lab-orbit orbit-two"></div>
-            <div class="lab-orbit orbit-three"></div>
-            <div class="hero-art-core"><span>14</span><small>tasks</small></div>
-            <span class="art-label label-top">4 embodiments</span>
-            <span class="art-label label-right">6 real lab scenes</span>
-            <span class="art-label label-bottom">3 dynamic phenomena</span>
-            <span class="art-label label-left">PFSM + 3DGS</span>
-          </div>
-        </section>
-
-        <section class="metrics" aria-label="AutoBio+ at a glance">
-          <div><strong>14</strong><span>laboratory tasks</span></div>
-          <div><strong>4</strong><span>robot embodiments</span></div>
-          <div><strong>3</strong><span>dynamic phenomena</span></div>
-          <div><strong>6</strong><span>real lab scenes</span></div>
-        </section>
-
-        <div class="content-layout">
-          <aside class="toc" aria-label="On this page">
-            <p class="toc-title">On this page</p>
-            <a class="toc-link active" href="#abstract">Abstract</a>
-            <a class="toc-link" href="#method">Method overview</a>
-            <a class="toc-link" href="#phenomena">Dynamic phenomena</a>
-            <a class="toc-link" href="#benchmark">Task benchmark</a>
-            <a class="toc-link" href="#visualizations">Visualizations</a>
-            <a class="toc-link" href="#experiments">Experiments</a>
-            <a class="toc-link" href="#resources">Resources</a>
-          </aside>
-
-          <div class="article">
-            <section class="section-block" id="abstract">
-              <p class="section-kicker">01 · Why AutoBio+</p>
-              <h2>Dexterous manipulation in laboratories is more than object placement.</h2>
-              <p class="lead">Automating biological laboratories requires robots to perform dexterous tool interactions under realistic visual conditions while handling dynamic experimental phenomena. AutoBio+ is a simulation benchmark and framework for evaluating these capabilities in realistic biological laboratory environments.</p>
-              <div class="callout"><span class="callout-mark">✦</span><p>AutoBio+ combines interactive simulated foreground objects, Gaussian-splatting backgrounds reconstructed from real laboratories, and parallel evaluation in one benchmark.</p></div>
-            </section>
-
-            <section class="section-block" id="method">
-              <p class="section-kicker">02 · Method overview</p>
-              <h2>A hybrid benchmark for evolving laboratory scenes.</h2>
-              <div class="method-grid">
-                <article class="method-card"><span class="card-number">A</span><h3>Particle visual effects</h3><p>Lightweight, controllable particles model flames, vapor, and bubbles while remaining decoupled from scene physics.</p></article>
-                <article class="method-card"><span class="card-number">B</span><h3>Hybrid rendering</h3><p>Interactive MuJoCo foregrounds are composited with 3D Gaussian Splatting backgrounds captured from six real laboratory scenes.</p></article>
-                <article class="method-card"><span class="card-number">C</span><h3>Parallel simulation</h3><p>PFSM policies, batched rendering, and decoupled trajectory replay support efficient data generation and model-independent evaluation.</p></article>
-              </div>
-              <div class="media-slot wide-slot" data-placeholder="overview-figure">
-                <div class="slot-icon">⌁</div><div><strong>Overview figure placeholder</strong><span>Add the exported teaser/overview figure here.</span></div><code>docs/media/overview.png</code>
-              </div>
-            </section>
-
-            <section class="section-block" id="phenomena">
-              <p class="section-kicker">03 · Dynamic phenomena</p>
-              <h2>Visual conditions that change while the robot acts.</h2>
-              <p class="section-intro">The benchmark introduces controllable visual effects that capture the evolving conditions of laboratory procedures without making the simulation unnecessarily expensive.</p>
-              <div class="phenomena-grid">
-                <article class="phenomenon-card flame"><div class="phenomenon-visual"><span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span></div><h3>Flame</h3><p>Upward-moving particles with changing color, opacity, and scale.</p><span class="slot-label">GIF / video placeholder</span></article>
-                <article class="phenomenon-card vapor"><div class="phenomenon-visual"><span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span></div><h3>Vapor</h3><p>Drift and stochastic perturbations produce soft, irregular motion.</p><span class="slot-label">GIF / video placeholder</span></article>
-                <article class="phenomenon-card bubbles"><div class="phenomenon-visual"><span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span></div><h3>Bubbles</h3><p>Growing and rising particles represent bubbling and stirring effects.</p><span class="slot-label">GIF / video placeholder</span></article>
-              </div>
-            </section>
-
-            <section class="section-block" id="benchmark">
-              <p class="section-kicker">04 · Task benchmark</p>
-              <h2>Four capabilities, fourteen laboratory tasks.</h2>
-              <div class="task-list">
-                <div class="task-group"><h3>Functional tool use <span>02</span></h3><div class="task-row"><span>Aspirate with Pipette</span><em>Shadow</em></div><div class="task-row"><span>Manipulate Tweezers</span><em>Wuji</em></div></div>
-                <div class="task-group"><h3>Precision manipulation <span>02</span></h3><div class="task-row"><span>Tighten Tube Cap</span><em>Aloha</em></div><div class="task-row"><span>Attach Pipette Tip</span><em>Shadow</em></div></div>
-                <div class="task-group"><h3>Language-conditioned grounding <span>03</span></h3><div class="task-row"><span>Load Centrifuge</span><em>Shadow</em></div><div class="task-row"><span>Transfer Tube</span><em>Shadow</em></div><div class="task-row"><span>Operate Mixer Panel</span><em>XHand</em></div></div>
-                <div class="task-group"><h3>Instrument operation <span>07</span></h3><div class="task-row"><span>Ignite Bunsen Burner</span><em>XHand</em></div><div class="task-row"><span>Close Centrifuge Lid</span><em>Wuji</em></div><div class="task-row"><span>Heat &amp; Stir Agar Solution</span><em>Wuji</em></div><div class="task-row"><span>Close / Open Thermal Cycler Lid</span><em>XHand</em></div><div class="task-row placeholder-row"><span>Two additional tasks</span><em>details soon</em></div></div>
-              </div>
-            </section>
-
-            <section class="section-block" id="visualizations">
-              <p class="section-kicker">05 · Visualizations</p>
-              <h2>Explore the benchmark assets.</h2>
-              <p class="section-intro">The slots below are prepared for the final task clips, particle-effect GIFs, and Gaussian scene captures. Replace each placeholder with a compressed MP4/WebM or GIF when the assets are ready.</p>
-              <div class="subsection-heading"><h3>Task visualizations</h3><span>14 slots · media pending</span></div>
-              <div class="media-grid task-media-grid">
-                <div class="media-slot" data-placeholder="task-01"><div class="slot-index">01</div><strong>Aspirate with Pipette</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-02"><div class="slot-index">02</div><strong>Manipulate Tweezers</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-03"><div class="slot-index">03</div><strong>Tighten Tube Cap</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-04"><div class="slot-index">04</div><strong>Attach Pipette Tip</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-05"><div class="slot-index">05</div><strong>Load Centrifuge</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-06"><div class="slot-index">06</div><strong>Transfer Tube</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-07"><div class="slot-index">07</div><strong>Operate Mixer Panel</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-08"><div class="slot-index">08</div><strong>Ignite Bunsen Burner</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-09"><div class="slot-index">09</div><strong>Close Centrifuge Lid</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-10"><div class="slot-index">10</div><strong>Heat &amp; Stir Agar Solution</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-11"><div class="slot-index">11</div><strong>Close Thermal Cycler Lid</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-12"><div class="slot-index">12</div><strong>Open Thermal Cycler Lid</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-13"><div class="slot-index">13</div><strong>Additional task</strong><span>video placeholder</span></div>
-                <div class="media-slot" data-placeholder="task-14"><div class="slot-index">14</div><strong>Additional task</strong><span>video placeholder</span></div>
-              </div>
-              <div class="subsection-heading"><h3>Gaussian laboratory scenes</h3><span>Drag the scene viewer when assets are added</span></div>
-              <div class="scene-grid">
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 01 · placeholder</div><div class="scene-crosshair">+</div></div>
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 02 · placeholder</div><div class="scene-crosshair">+</div></div>
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 03 · placeholder</div><div class="scene-crosshair">+</div></div>
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 04 · placeholder</div><div class="scene-crosshair">+</div></div>
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 05 · placeholder</div><div class="scene-crosshair">+</div></div>
-                <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><div class="scene-viewer-label">Scene 06 · placeholder</div><div class="scene-crosshair">+</div></div>
-              </div>
-            </section>
-
-            <section class="section-block" id="experiments">
-              <p class="section-kicker">06 · Experiments</p>
-              <h2>Designed for reproducible evaluation.</h2>
-              <div class="experiment-note"><div class="experiment-stat"><strong>12</strong><span>representative tasks evaluated</span></div><div class="experiment-stat"><strong>4</strong><span>policies compared</span></div><div class="experiment-stat"><strong>300</strong><span>rollouts per policy setup</span></div></div>
-              <p class="section-intro">The paper evaluates Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings, and validates the visual realism of Gaussian backgrounds in a real-world UR5e + XHand setup.</p>
-              <div class="media-slot wide-slot" data-placeholder="real-world-results"><div class="slot-icon">↗</div><div><strong>Real-world results placeholder</strong><span>Add the setup image, result plots, or video here.</span></div><code>docs/media/real-world-results.mp4</code></div>
-            </section>
-
-            <footer class="site-footer"><span>AutoBio+ · Anonymous for review</span><a href="#top">Back to top ↑</a></footer>
-          </div>
+    <main class="page-shell" id="top">
+      <section class="paper-header" id="overview">
+        <p class="venue-label">Anonymous submission · Robotics benchmark</p>
+        <h1><span>AutoBio+:</span> Benchmarking Dexterous Manipulation with Dynamic Experimental Phenomena in Realistic Laboratories</h1>
+        <p class="authors">Anonymous Authors</p>
+        <p class="affiliations">Double-blind review · Author affiliations will be revealed after review</p>
+        <div class="resource-row" id="resources">
+          <button class="resource-pill" type="button" disabled><span>▧</span> Appendix <small>coming soon</small></button>
+          <button class="resource-pill" type="button" disabled><span>⌘</span> Code <small>coming soon</small></button>
+          <button class="resource-pill" type="button" disabled><span>↗</span> arXiv <small>coming soon</small></button>
         </div>
-      </main>
-    </div>
+        <p class="paper-note">AutoBio+ = a realistic, parallelizable benchmark for dexterous manipulation in biological laboratories.</p>
+      </section>
+
+      <div class="teaser-figure" aria-label="Overview figure placeholder">
+        <div class="teaser-art"><span class="teaser-chip">14 tasks</span><span class="teaser-chip">4 embodiments</span><span class="teaser-chip">3 phenomena</span><span class="teaser-chip">6 Gaussian scenes</span><div class="teaser-center">AutoBio<span>+</span></div></div>
+        <p><strong>Overview of AutoBio+.</strong> A benchmark combining interactive simulated foregrounds, 3D Gaussian Splatting backgrounds, dynamic visual phenomena, and parallel policy evaluation.</p>
+        <code>Overview figure placeholder · docs/media/overview.png</code>
+      </div>
+
+      <div class="content-layout">
+        <aside class="toc" aria-label="Contents">
+          <p class="toc-title">Contents</p>
+          <a class="toc-link active" href="#summary">Summary Video</a>
+          <a class="toc-link" href="#abstract">Abstract</a>
+          <a class="toc-link" href="#method">Method Overview</a>
+          <a class="toc-link" href="#phenomena">Dynamic Phenomena</a>
+          <a class="toc-link" href="#tasks">Task Benchmark</a>
+          <a class="toc-link" href="#visualizations">Task Visualizations</a>
+          <a class="toc-link" href="#scenes">Gaussian Scenes</a>
+          <a class="toc-link" href="#experiments">Experiments</a>
+          <a class="toc-link" href="#resources">Resources</a>
+        </aside>
+
+        <article class="article">
+          <section class="content-section summary-section" id="summary">
+            <h2>Summary Video</h2>
+            <p class="section-caption">A short overview of the benchmark and its realistic laboratory environments.</p>
+            <div class="video-placeholder"><div class="play-button">▶</div><span>Summary video placeholder</span><code>docs/media/summary.mp4</code></div>
+          </section>
+
+          <section class="content-section" id="abstract">
+            <h2>Abstract</h2>
+            <p>Automating biological laboratories requires robots to perform dexterous tool interactions under realistic visual conditions while handling dynamic experimental phenomena, presenting significant challenges for robotic manipulation. To enable systematic evaluation under these conditions, we introduce <strong>AutoBio+</strong>, a simulation benchmark and framework for dexterous manipulation in realistic biological laboratory environments.</p>
+            <p>AutoBio+ comprises 14 tasks across 4 robot embodiments, spanning functional tool use, precision manipulation, language-conditioned visual grounding, and instrument operation. We introduce controllable dynamic experimental phenomena, including flames, vapor, and bubbles, and a hybrid rendering pipeline that integrates interactive simulated foreground objects with Gaussian-splatting backgrounds reconstructed from 6 real laboratory scenes.</p>
+            <div class="highlight-line"><span>14</span> laboratory tasks · <span>4</span> robot embodiments · <span>6</span> real scenes · <span>3</span> dynamic phenomena</div>
+          </section>
+
+          <section class="content-section" id="method">
+            <h2>Method Overview</h2>
+            <p class="section-caption">AutoBio+ brings visual realism and efficient evaluation into the same simulation loop.</p>
+            <div class="method-grid">
+              <article><span class="method-index">A</span><h3>Particle visual effects</h3><p>Lightweight, controllable particles model flames, vapor, and bubbles while remaining decoupled from scene physics.</p></article>
+              <article><span class="method-index">B</span><h3>Hybrid rendering</h3><p>Interactive MuJoCo foregrounds are composited with Gaussian-splatting backgrounds captured from real laboratories.</p></article>
+              <article><span class="method-index">C</span><h3>Parallel simulation</h3><p>PFSM policies, batched rendering, and decoupled trajectory replay support efficient data generation and evaluation.</p></article>
+            </div>
+            <div class="figure-placeholder"><span class="figure-icon">⌁</span><strong>Method figure placeholder</strong><span>Add the exported method/overview figure here.</span><code>docs/media/method-overview.png</code></div>
+          </section>
+
+          <section class="content-section" id="phenomena">
+            <h2>Dynamic Experimental Phenomena</h2>
+            <p class="section-caption">The visual conditions evolve as the robot acts.</p>
+            <div class="phenomena-grid">
+              <article class="phenomenon-card flame"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Flame</h3><p>Upward-moving particles with changing color, opacity, and scale.</p><span>GIF/video placeholder</span></article>
+              <article class="phenomenon-card vapor"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Vapor</h3><p>Drift and stochastic perturbations produce soft, irregular motion.</p><span>GIF/video placeholder</span></article>
+              <article class="phenomenon-card bubbles"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Bubbles</h3><p>Growing and rising particles represent bubbling and stirring effects.</p><span>GIF/video placeholder</span></article>
+            </div>
+          </section>
+
+          <section class="content-section" id="tasks">
+            <h2>Task Benchmark</h2>
+            <p class="section-caption">Four capability categories cover the 14-task suite.</p>
+            <div class="task-table">
+              <div class="task-category"><h3>Functional Tool Use <small>02 tasks</small></h3><p>Aspirate with Pipette <em>Shadow</em></p><p>Manipulate Tweezers <em>Wuji</em></p></div>
+              <div class="task-category"><h3>Precision Manipulation <small>02 tasks</small></h3><p>Tighten Tube Cap <em>Aloha</em></p><p>Attach Pipette Tip <em>Shadow</em></p></div>
+              <div class="task-category"><h3>Language-Conditioned Grounding <small>03 tasks</small></h3><p>Load Centrifuge <em>Shadow</em></p><p>Transfer Tube <em>Shadow</em></p><p>Operate Mixer Panel <em>XHand</em></p></div>
+              <div class="task-category"><h3>Instrument Operation <small>07 tasks</small></h3><p>Ignite Bunsen Burner <em>XHand</em></p><p>Close Centrifuge Lid <em>Wuji</em></p><p>Heat &amp; Stir Agar Solution <em>Wuji</em></p><p>Close / Open Thermal Cycler Lid <em>XHand</em></p><p class="placeholder-row">Two additional tasks <em>details soon</em></p></div>
+            </div>
+          </section>
+
+          <section class="content-section" id="visualizations">
+            <h2>Task Visualizations</h2>
+            <p class="section-caption">Replace each placeholder with a compressed MP4/WebM or GIF when the final clips are ready.</p>
+            <div class="media-grid">
+              <div class="media-card"><span>01</span><strong>Aspirate with Pipette</strong><i>video placeholder</i></div><div class="media-card"><span>02</span><strong>Manipulate Tweezers</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>03</span><strong>Tighten Tube Cap</strong><i>video placeholder</i></div><div class="media-card"><span>04</span><strong>Attach Pipette Tip</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>05</span><strong>Load Centrifuge</strong><i>video placeholder</i></div><div class="media-card"><span>06</span><strong>Transfer Tube</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>07</span><strong>Operate Mixer Panel</strong><i>video placeholder</i></div><div class="media-card"><span>08</span><strong>Ignite Bunsen Burner</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>09</span><strong>Close Centrifuge Lid</strong><i>video placeholder</i></div><div class="media-card"><span>10</span><strong>Heat &amp; Stir Agar Solution</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>11</span><strong>Close Thermal Cycler Lid</strong><i>video placeholder</i></div><div class="media-card"><span>12</span><strong>Open Thermal Cycler Lid</strong><i>video placeholder</i></div>
+              <div class="media-card"><span>13</span><strong>Additional task</strong><i>video placeholder</i></div><div class="media-card"><span>14</span><strong>Additional task</strong><i>video placeholder</i></div>
+            </div>
+          </section>
+
+          <section class="content-section" id="scenes">
+            <h2>Gaussian Laboratory Scenes</h2>
+            <p class="section-caption">Drag a placeholder to preview the intended free-viewpoint interaction; replace it with the final scene capture later.</p>
+            <div class="scene-grid">
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 01 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 02 · placeholder</span><b>+</b></div>
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 03 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 04 · placeholder</span><b>+</b></div>
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 05 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 06 · placeholder</span><b>+</b></div>
+            </div>
+          </section>
+
+          <section class="content-section" id="experiments">
+            <h2>Experiments</h2>
+            <p class="section-caption">Evaluation across policies and a real-world UR5e + XHand setup.</p>
+            <div class="experiment-stats"><div><strong>12</strong><span>representative tasks</span></div><div><strong>4</strong><span>policies compared</span></div><div><strong>300</strong><span>rollouts per setup</span></div></div>
+            <p>We evaluate Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings, and validate the visual realism of Gaussian backgrounds in a real-world setup.</p>
+            <div class="figure-placeholder"><span class="figure-icon">↗</span><strong>Real-world results placeholder</strong><span>Add the setup image, result plots, or video here.</span><code>docs/media/real-world-results.mp4</code></div>
+          </section>
+
+          <footer class="site-footer"><span>AutoBio+ · Anonymous for review</span><a href="#top">Back to top ↑</a></footer>
+        </article>
+      </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
