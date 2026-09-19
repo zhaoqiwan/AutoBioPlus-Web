@@ -21,6 +21,8 @@ button { font: inherit; }
 .gaussian-stage canvas { display: block; width: 100% !important; height: 100% !important; }
 .gaussian-status { position: absolute; z-index: 2; left: 50%; top: 50%; margin: 0; padding: 8px 12px; color: #fff; background: rgba(15,31,42,.76); border-radius: 6px; transform: translate(-50%, -50%); }
 body.modal-open { overflow: hidden; }
+.gaussian-retry { position: absolute; z-index: 4; left: 50%; top: 65%; transform: translateX(-50%); padding: 8px 16px; border: 0; border-radius: 6px; background: #2878b8; color: white; cursor: pointer; }
+.gaussian-status { pointer-events: none; max-width: 90%; text-align: center; }
 .site-header { position: sticky; z-index: 10; top: 0; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1160px; min-height: 58px; margin: auto; padding: 0 24px; }
 .site-brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 700; }.brand-mark { display: grid; place-items: center; width: 25px; height: 25px; color: #fff; background: var(--blue); border-radius: 7px; font-size: .72rem; }

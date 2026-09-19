@@ -7,16 +7,31 @@ const title = document.querySelector('#gaussian-title');
 const closeButton = document.querySelector('.gaussian-close');
 let viewer = null;
 let opener = null;
+let generation = 0;
+let loading = null;
+let watchdog = null;
+
+const retry = document.createElement('button');
+retry.type = 'button';
+retry.textContent = 'Retry loading';
+retry.hidden = true;
+retry.className = 'gaussian-retry';
+stage.appendChild(retry);
+retry.addEventListener('click', () => openScene(opener));
 
 function disposeViewer() {
+  clearTimeout(watchdog);
+  loading?.abort?.();
+  loading = null;
   if (viewer) {
-    viewer.dispose();
+    const previous = viewer;
     viewer = null;
+    Promise.resolve(previous.dispose()).catch(console.error);
   }
-  stage.querySelectorAll('canvas').forEach((canvas) => canvas.remove());
 }
 
 function closeModal() {
+  generation++;
   disposeViewer();
   modal.hidden = true;
   document.body.classList.remove('modal-open');
@@ -24,18 +39,41 @@ function closeModal() {
 }
 
 async function openScene(button) {
+  const request = ++generation;
+  disposeViewer();
+  // Each viewer owns its container, so a previous asynchronous dispose cannot
+  // remove the next viewer's canvas or loading UI.
+  stage.querySelectorAll('.gaussian-render-root').forEach((root) => root.remove());
+  const root = document.createElement('div');
+  root.className = 'gaussian-render-root';
+  root.style.cssText = 'position:absolute;inset:0';
+  stage.appendChild(root);
+  retry.hidden = true;
   const scene = button.dataset.scene;
   opener = button;
   modal.hidden = false;
   document.body.classList.add('modal-open');
   title.textContent = `Lab ${scene} · Interactive Gaussian Scene`;
   status.hidden = false;
-  status.textContent = 'Loading scene…';
+  status.textContent = 'Connecting to scene download…';
   closeButton.focus();
+
+  const armTimeout = () => {
+    clearTimeout(watchdog);
+    watchdog = setTimeout(() => {
+      if (request !== generation) return;
+      generation++;
+      disposeViewer();
+      status.hidden = false;
+      status.textContent = 'Loading stalled. Check your connection and retry.';
+      retry.hidden = false;
+    }, 90000);
+  };
+  armTimeout();
 
   try {
     viewer = new GaussianSplats3D.Viewer({
-      rootElement: stage,
+      rootElement: root,
       cameraUp: [0, 0, 1],
       initialCameraPosition: [0, -12, 2.2],
       initialCameraLookAt: [0, 0, 0],
@@ -46,17 +84,38 @@ async function openScene(button) {
       halfPrecisionCovariancesOnGPU: true,
       inMemoryCompressionLevel: 1,
     });
-    await viewer.addSplatScene(`media/gaussian-scenes/lab${scene}.splat`, {
+    const currentViewer = viewer;
+    // Render partial data while the full-resolution file continues downloading.
+    currentViewer.start();
+    loading = currentViewer.addSplatScene(`media/gaussian-scenes/lab${scene}.splat`, {
       splatAlphaRemovalThreshold: 1,
-      showLoadingUI: true,
-      progressiveLoad: false,
+      showLoadingUI: false,
+      progressiveLoad: true,
+      onProgress: (percent, label, phase) => {
+        if (request !== generation) return;
+        armTimeout();
+        status.hidden = false;
+        status.textContent = phase === 0
+          ? `Downloading full scene${Number.isFinite(percent) ? `: ${Math.round(percent)}%` : '…'}`
+          : 'Preparing 3D scene…';
+        if (phase === 2) {
+          clearTimeout(watchdog);
+          status.hidden = true;
+        }
+      },
     });
+    await loading;
+    if (request !== generation) return;
+    clearTimeout(watchdog);
+    loading = null;
     status.hidden = true;
-    viewer.start();
   } catch (error) {
+    if (request !== generation) return;
+    clearTimeout(watchdog);
     console.error(error);
     status.hidden = false;
     status.textContent = 'Unable to load the 3D scene. Please try a current Chrome or Edge browser.';
+    retry.hidden = false;
   }
 }
 
