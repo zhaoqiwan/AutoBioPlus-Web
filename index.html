@@ -53,6 +53,11 @@
         </div>
       </section>
 
+          <figure class="paper-figure overview-figure">
+            <img src="media/overview.png" alt="AutoBio+ benchmark overview showing laboratory tasks, dynamic phenomena, Gaussian backgrounds, parallel data collection, and robot embodiments" />
+            <figcaption><strong>AutoBio+ overview.</strong> The benchmark combines dexterous laboratory tasks, dynamic experimental phenomena, Gaussian-splatting backgrounds, parallel data collection, and multiple robot embodiments.</figcaption>
+          </figure>
+
           <article class="article">
           <section class="content-section summary-section" id="summary">
             <h2>Summary Video</h2>
@@ -92,22 +97,28 @@ realistic manipulation evaluation.</p>
               <article><span class="method-index">B</span><h3>Hybrid rendering</h3><p>Interactive MuJoCo foregrounds are composited with Gaussian-splatting backgrounds captured from real laboratories.</p></article>
               <article><span class="method-index">C</span><h3>Parallel simulation</h3><p>PFSM policies, batched rendering, and decoupled trajectory replay support efficient data generation and evaluation.</p></article>
             </div>
-            <div class="figure-placeholder"><span class="figure-icon">⌁</span><strong>Method figure placeholder</strong><span>Add the exported method/overview figure here.</span><code>docs/media/method-overview.png</code></div>
+            <figure class="paper-figure paper-figure-bordered">
+              <img src="media/method-overview.png" alt="Grasp synthesis and parallel data collection pipeline" />
+              <figcaption><strong>Grasp synthesis and parallel data collection.</strong> The paper figure summarizes the synthesis pipeline and its parallel collection stage.</figcaption>
+            </figure>
           </section>
 
           <section class="content-section" id="phenomena">
             <h2>Dynamic Experimental Phenomena</h2>
             <p class="section-caption">The visual conditions evolve as the robot acts.</p>
-            <div class="phenomena-grid">
-              <article class="phenomenon-card flame"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Flame</h3><p>Upward-moving particles with changing color, opacity, and scale.</p><span>GIF/video placeholder</span></article>
-              <article class="phenomenon-card vapor"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Vapor</h3><p>Drift and stochastic perturbations produce soft, irregular motion.</p><span>GIF/video placeholder</span></article>
-              <article class="phenomenon-card bubbles"><div class="phenomenon-visual"><i></i><i></i><i></i><i></i></div><h3>Bubbles</h3><p>Growing and rising particles represent bubbling and stirring effects.</p><span>GIF/video placeholder</span></article>
-            </div>
+            <figure class="paper-figure">
+              <img src="media/dynamic-phenomena.png" alt="Dynamic experimental phenomena examples showing vapor, flame, and bubble conditions" />
+              <figcaption><strong>Dynamic experimental phenomena.</strong> The paper presents vapor, flame, and bubble examples as changing visual conditions in the benchmark.</figcaption>
+            </figure>
           </section>
 
           <section class="content-section" id="tasks">
             <h2>Task Benchmark</h2>
             <p class="section-caption">Four capability categories cover the 14-task suite.</p>
+            <figure class="paper-figure">
+              <img src="media/task-overview-grid.png" alt="AutoBio+ task overview grid and dynamic experimental phenomena examples" />
+              <figcaption><strong>Task overview.</strong> The figure groups the benchmark tasks and shows representative dynamic experimental phenomena.</figcaption>
+            </figure>
             <div class="task-table">
               <div class="task-category"><h3>Functional Tool Use <small>02 tasks</small></h3><p>Aspirate with Pipette <em>Shadow</em></p><p>Manipulate Tweezers <em>Wuji</em></p></div>
               <div class="task-category"><h3>Precision Manipulation <small>02 tasks</small></h3><p>Tighten Tube Cap <em>Aloha</em></p><p>Attach Pipette Tip <em>Shadow</em></p></div>
@@ -145,7 +156,10 @@ realistic manipulation evaluation.</p>
             <p class="section-caption">Evaluation across policies and a real-world UR5e + XHand setup.</p>
             <div class="experiment-stats"><div><strong>12</strong><span>representative tasks</span></div><div><strong>4</strong><span>policies compared</span></div><div><strong>300</strong><span>rollouts per setup</span></div></div>
             <p>We evaluate Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings, and validate the visual realism of Gaussian backgrounds in a real-world setup.</p>
-            <div class="figure-placeholder"><span class="figure-icon">↗</span><strong>Real-world results placeholder</strong><span>Add the setup image, result plots, or video here.</span><code>docs/media/real-world-results.mp4</code></div>
+            <figure class="paper-figure compact-figure">
+              <img src="media/real-world-results.png" alt="Comparison of average progress scores with Gaussian and MuJoCo backgrounds" />
+              <figcaption><strong>Real-world validation.</strong> Average progress scores reported for Gaussian-background and MuJoCo-background settings.</figcaption>
+            </figure>
           </section>
 
           <footer class="site-footer"><span>AutoBio+ · Anonymous for review</span><a href="#top">Back to top ↑</a></footer>
