@@ -9,6 +9,18 @@ button { font: inherit; }
 .scene-card ul { margin: 0 6px 10px; padding-left: 20px; color: var(--muted); font-size: .82rem; line-height: 1.6; }
 .scene-card .scene-viewer { cursor: default; background: #eef3f6; }
 .scene-card .scene-viewer img { display: block; width: 100%; height: 235px; object-fit: cover; }
+.scene-launch { position: absolute; right: 12px; bottom: 11px; padding: 7px 12px; color: #fff; background: rgba(28,92,145,.9); border: 1px solid rgba(255,255,255,.65); border-radius: 999px; cursor: pointer; font-size: .72rem; font-weight: 700; }
+.scene-launch:hover, .scene-launch:focus-visible { background: var(--blue-dark); outline: 2px solid #fff; outline-offset: 2px; }
+.gaussian-modal[hidden] { display: none; }
+.gaussian-modal { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(7,18,28,.84); }
+.gaussian-dialog { width: min(1120px, 96vw); overflow: hidden; background: #111a20; border: 1px solid rgba(255,255,255,.22); border-radius: 14px; box-shadow: 0 24px 80px rgba(0,0,0,.45); }
+.gaussian-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 16px; color: #fff; background: #17242e; }
+.gaussian-toolbar div { display: grid; }.gaussian-toolbar small { color: #b8c8d3; font-size: .74rem; }
+.gaussian-close { width: 36px; height: 36px; padding: 0; color: #fff; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.25); border-radius: 50%; cursor: pointer; font-size: 1.5rem; line-height: 1; }
+.gaussian-stage { position: relative; width: 100%; height: min(72vh, 720px); min-height: 420px; overflow: hidden; background: #eaf0f3; }
+.gaussian-stage canvas { display: block; width: 100% !important; height: 100% !important; }
+.gaussian-status { position: absolute; z-index: 2; left: 50%; top: 50%; margin: 0; padding: 8px 12px; color: #fff; background: rgba(15,31,42,.76); border-radius: 6px; transform: translate(-50%, -50%); }
+body.modal-open { overflow: hidden; }
 .site-header { position: sticky; z-index: 10; top: 0; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1160px; min-height: 58px; margin: auto; padding: 0 24px; }
 .site-brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 700; }.brand-mark { display: grid; place-items: center; width: 25px; height: 25px; color: #fff; background: var(--blue); border-radius: 7px; font-size: .72rem; }
