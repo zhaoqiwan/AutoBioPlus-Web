@@ -29,13 +29,11 @@
           <a class="toc-link active" href="#summary">Summary Video</a>
           <a class="toc-link" href="#abstract">Abstract</a>
           <a class="toc-link" href="#method">Method Overview</a>
-          <a class="toc-link toc-subitem" href="#method">Particle Visual Effects</a>
-          <a class="toc-link toc-subitem" href="#method">Hybrid Rendering</a>
-          <a class="toc-link toc-subitem" href="#method">Parallel Simulation</a>
-          <a class="toc-link" href="#phenomena">Dynamic Phenomena</a>
+          <a class="toc-link toc-subitem" href="#phenomena">Particle Visual Effects</a>
+          <a class="toc-link toc-subitem" href="#scenes">Hybrid Rendering</a>
+          <a class="toc-link toc-subitem" href="#parallel">Parallel Simulation</a>
           <a class="toc-link" href="#tasks">Task Benchmark</a>
           <a class="toc-link" href="#visualizations">Task Visualizations</a>
-          <a class="toc-link" href="#scenes">Gaussian Scenes</a>
           <a class="toc-link" href="#experiments">Experiments</a>
           <a class="toc-link" href="#resources">Resources</a>
         </aside>
@@ -96,11 +94,6 @@ realistic manipulation evaluation.</p>
               <article><span class="method-index">B</span><h3>Hybrid rendering</h3><p>Interactive MuJoCo foregrounds are composited with Gaussian-splatting backgrounds captured from real laboratories.</p></article>
               <article><span class="method-index">C</span><h3>Parallel simulation</h3><p>PFSM policies, batched rendering, and decoupled trajectory replay support efficient data generation and evaluation.</p></article>
             </div>
-            <h3 class="figure-heading">Grasp Synthesis and Parallel Data Collection</h3>
-            <figure class="paper-figure paper-figure-bordered">
-              <img src="media/method-overview.png" alt="Grasp synthesis and parallel data collection pipeline" />
-              <figcaption>The detailed pipeline for preparing validated grasps and collecting trajectories in parallel.</figcaption>
-            </figure>
           </section>
 
           <section class="content-section" id="phenomena">
@@ -109,6 +102,25 @@ realistic manipulation evaluation.</p>
             <figure class="paper-figure">
               <img src="media/dynamic-phenomena.png" alt="Dynamic experimental phenomena examples showing vapor, flame, and bubble conditions" />
               <figcaption><strong>Dynamic experimental phenomena.</strong> The paper presents vapor, flame, and bubble examples as changing visual conditions in the benchmark.</figcaption>
+            </figure>
+          </section>
+
+          <section class="content-section" id="scenes">
+            <h2>Gaussian Laboratory Scenes</h2>
+            <p class="section-caption">Drag a placeholder to preview the intended free-viewpoint interaction; replace it with the final scene capture later.</p>
+            <div class="scene-grid">
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 01 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 02 · placeholder</span><b>+</b></div>
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 03 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 04 · placeholder</span><b>+</b></div>
+              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 05 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 06 · placeholder</span><b>+</b></div>
+            </div>
+          </section>
+
+          <section class="content-section pipeline-section" id="parallel">
+            <h2>Parallel Simulation</h2>
+            <h3 class="figure-heading">Grasp Synthesis and Parallel Data Collection</h3>
+            <figure class="paper-figure paper-figure-bordered">
+              <img src="media/method-overview.png" alt="Grasp synthesis and parallel data collection pipeline" />
+              <figcaption>The detailed pipeline for preparing validated grasps and collecting trajectories in parallel.</figcaption>
             </figure>
           </section>
 
@@ -138,16 +150,6 @@ realistic manipulation evaluation.</p>
               <div class="media-card"><span>09</span><strong>Close Centrifuge Lid</strong><i>video placeholder</i></div><div class="media-card"><span>10</span><strong>Heat &amp; Stir Agar Solution</strong><i>video placeholder</i></div>
               <div class="media-card"><span>11</span><strong>Close Thermal Cycler Lid</strong><i>video placeholder</i></div><div class="media-card"><span>12</span><strong>Open Thermal Cycler Lid</strong><i>video placeholder</i></div>
               <div class="media-card"><span>13</span><strong>Transfer Tube (XHand)</strong><i>video placeholder</i></div><div class="media-card"><span>14</span><strong>Loosen Tube Cap</strong><i>video placeholder</i></div>
-            </div>
-          </section>
-
-          <section class="content-section" id="scenes">
-            <h2>Gaussian Laboratory Scenes</h2>
-            <p class="section-caption">Drag a placeholder to preview the intended free-viewpoint interaction; replace it with the final scene capture later.</p>
-            <div class="scene-grid">
-              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 01 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 02 · placeholder</span><b>+</b></div>
-              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 03 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 04 · placeholder</span><b>+</b></div>
-              <div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 05 · placeholder</span><b>+</b></div><div class="scene-viewer" data-panzoom><div class="scene-grid-lines"></div><span>Scene 06 · placeholder</span><b>+</b></div>
             </div>
           </section>
 
