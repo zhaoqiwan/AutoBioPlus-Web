@@ -60,3 +60,25 @@ document.querySelectorAll('[data-panzoom]').forEach((viewer) => {
     render();
   }, { passive: false });
 });
+
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const previous = carousel.querySelector('.carousel-prev');
+  const next = carousel.querySelector('.carousel-next');
+  let index = 0;
+  const visibleCount = () => window.matchMedia('(max-width: 640px)').matches ? 1 : 3;
+  const render = () => {
+    const count = visibleCount();
+    const last = Math.max(0, track.children.length - count);
+    index = Math.min(index, last);
+    const step = track.children[0]?.getBoundingClientRect().width || 0;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    track.style.transform = `translateX(-${index * (step + gap)}px)`;
+    previous.disabled = index === 0;
+    next.disabled = index === last;
+  };
+  previous.addEventListener('click', () => { index -= 1; render(); });
+  next.addEventListener('click', () => { index += 1; render(); });
+  window.addEventListener('resize', render);
+  render();
+});
