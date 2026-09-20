@@ -11,6 +11,17 @@ let generation = 0;
 let loading = null;
 let watchdog = null;
 
+// Front-camera poses from the simulator, transformed into the normalized and
+// azimuth-corrected coordinate system used by the web .splat assets.
+const sceneCameraProfiles = {
+  1: { position: [-1.59901, -0.48730, -0.12296], lookAt: [0.62327, -3.31277, -1.87743], up: [0.26232, -0.35167, 0.89862] },
+  2: { position: [0.36955, -2.56940, -0.31730], lookAt: [0.90067, -6.52706, -0.55152], up: [0.00779, -0.05804, 0.99828] },
+  3: { position: [-1.04053, 0.32951, 0.10497], lookAt: [-1.61589, -3.21885, -1.64950], up: [-0.08128, -0.43114, 0.89862] },
+  4: { position: [0.68745, 2.53681, -0.08610], lookAt: [2.39370, 5.97988, -1.19695], up: [0.13515, 0.24294, 0.96058] },
+  5: { position: [-1.04875, -3.18924, -0.24041], lookAt: [-1.05473, -3.49284, -0.47044], up: [0, 0, 1] },
+  6: { position: [1.47564, -2.43748, -0.34399], lookAt: [1.77940, -6.05312, -2.02770], up: [0.03524, -0.41945, 0.90709] },
+};
+
 const retry = document.createElement('button');
 retry.type = 'button';
 retry.textContent = 'Retry loading';
@@ -50,6 +61,7 @@ async function openScene(button) {
   stage.appendChild(root);
   retry.hidden = true;
   const scene = button.dataset.scene;
+  const cameraProfile = sceneCameraProfiles[scene];
   opener = button;
   modal.hidden = false;
   document.body.classList.add('modal-open');
@@ -74,9 +86,9 @@ async function openScene(button) {
   try {
     viewer = new GaussianSplats3D.Viewer({
       rootElement: root,
-      cameraUp: [0, 0, 1],
-      initialCameraPosition: [0, -12, 2.2],
-      initialCameraLookAt: [0, 0, 0],
+      cameraUp: cameraProfile.up,
+      initialCameraPosition: cameraProfile.position,
+      initialCameraLookAt: cameraProfile.lookAt,
       sharedMemoryForWorkers: false,
       gpuAcceleratedSort: false,
       integerBasedSort: false,
