@@ -99,6 +99,19 @@ async function openScene(button) {
     const currentViewer = viewer;
     // Render partial data while the full-resolution file continues downloading.
     currentViewer.start();
+    // Keep the interactive view close to the simulator's front-camera view so
+    // the shared laboratory scan is not exposed from extreme angles.
+    const controls = currentViewer.controls;
+    if (controls) {
+      const azimuth = controls.getAzimuthalAngle();
+      const polar = controls.getPolarAngle();
+      const horizontalLimit = Math.PI / 4;
+      const verticalLimit = Math.PI / 6;
+      controls.minAzimuthAngle = azimuth - horizontalLimit;
+      controls.maxAzimuthAngle = azimuth + horizontalLimit;
+      controls.minPolarAngle = Math.max(0.1, polar - verticalLimit);
+      controls.maxPolarAngle = Math.min(Math.PI * 0.9, polar + verticalLimit);
+    }
     loading = currentViewer.addSplatScene(`media/gaussian-scenes/lab${scene}.splat`, {
       splatAlphaRemovalThreshold: 1,
       showLoadingUI: false,
@@ -107,10 +120,14 @@ async function openScene(button) {
         if (request !== generation) return;
         armTimeout();
         status.hidden = false;
-        status.textContent = phase === 0
-          ? `Downloading full scene${Number.isFinite(percent) ? `: ${Math.round(percent)}%` : '…'}`
-          : 'Preparing 3D scene…';
-        if (phase === 2) {
+        if (phase === 0 && Number.isFinite(percent) && percent >= 100) {
+          status.hidden = true;
+        } else {
+          status.textContent = phase === 0
+            ? `Downloading full scene${Number.isFinite(percent) ? `: ${Math.round(percent)}%` : '…'}`
+            : 'Preparing 3D scene…';
+        }
+        if (phase === 2 || (phase === 0 && Number.isFinite(percent) && percent >= 100)) {
           clearTimeout(watchdog);
           status.hidden = true;
         }
