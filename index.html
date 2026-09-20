@@ -188,6 +188,28 @@ realistic manipulation evaluation.</p>
             <p class="section-caption">Evaluation across policies and a real-world UR5e + XHand setup.</p>
             <div class="experiment-stats"><div><strong>12</strong><span>representative tasks</span></div><div><strong>4</strong><span>policies compared</span></div><div><strong>300</strong><span>rollouts per setup</span></div></div>
             <p>We evaluate Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings, and validate the visual realism of Gaussian backgrounds in a real-world setup.</p>
+            <div class="gaussian-comparison">
+              <div class="comparison-heading">
+                <span>Real-World Validation</span>
+                <h3>Gaussian Background vs. MuJoCo Background</h3>
+                <p>The two conditions differ only in the visual background used for the simulated demonstrations.</p>
+              </div>
+              <div class="comparison-videos">
+                <article class="comparison-card">
+                  <h4>Gaussian Background</h4>
+                  <div class="comparison-video-placeholder"><span>Video placeholder</span><small>Tube insertion · Gaussian background</small></div>
+                </article>
+                <article class="comparison-card">
+                  <h4>MuJoCo Background</h4>
+                  <div class="comparison-video-placeholder"><span>Video placeholder</span><small>Tube insertion · Standard simulator background</small></div>
+                </article>
+              </div>
+              <div class="comparison-result" aria-label="Normalized mean score comparison">
+                <div><strong>66%</strong><span>Gaussian background</span></div>
+                <div class="comparison-versus">vs.</div>
+                <div><strong>17%</strong><span>MuJoCo background</span></div>
+              </div>
+            </div>
             <figure class="paper-figure compact-figure">
               <img src="media/real-world-results.png" alt="Comparison of average progress scores with Gaussian and MuJoCo backgrounds" />
               <figcaption><strong>Real-world validation.</strong> Average progress scores reported for Gaussian-background and MuJoCo-background settings.</figcaption>
