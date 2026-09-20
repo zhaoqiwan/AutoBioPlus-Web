@@ -37,7 +37,8 @@
           <a class="toc-link toc-subitem" href="#parallel">Parallel Simulation</a>
           <a class="toc-link" href="#tasks">Task Benchmark</a>
           <a class="toc-link" href="#visualizations">Task Visualizations</a>
-          <a class="toc-link" href="#experiments">Experiments</a>
+          <a class="toc-link" href="#experiments">Simulation Experiments</a>
+          <a class="toc-link" href="#real-world-validation">Real-World Validation</a>
           <a class="toc-link" href="#resources">Resources</a>
         </aside>
 
@@ -183,13 +184,23 @@ realistic manipulation evaluation.</p>
           </section>
 
           <section class="content-section" id="experiments">
-            <h2>Experiments</h2>
-            <p class="section-caption">Evaluation across policies and a real-world UR5e + XHand setup.</p>
+            <h2>Simulation Experiments</h2>
+            <p class="section-caption">Policy evaluation on 12 representative AutoBio+ tasks.</p>
             <div class="experiment-stats"><div><strong>12</strong><span>representative tasks</span></div><div><strong>4</strong><span>policies compared</span></div><div><strong>300</strong><span>rollouts per setup</span></div></div>
-            <p>We evaluate Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings, and validate the visual realism of Gaussian backgrounds in a real-world setup.</p>
+            <p>We evaluate Diffusion Policy, π<sub>0.5</sub>, GR00T-N1.7, and Fast-WAM under identical task-specific settings.</p>
+            <figure class="paper-figure">
+              <a href="media/experiments/simulation-results.png" target="_blank" rel="noopener" aria-label="Open simulation results table at full size">
+                <img src="media/experiments/simulation-results.png" alt="Table II: Task-wise results for DP, pi 0.5, GR00T-N1.7, and Fast-WAM across 12 representative tasks" loading="lazy" />
+              </a>
+              <figcaption>Mean ± SEM over 3 seeds, with 100 rollouts per seed. Click the table to view it at full size.</figcaption>
+            </figure>
+          </section>
+
+          <section class="content-section" id="real-world-validation">
+            <h2>Real-World Validation</h2>
+            <p class="section-caption">Tube insertion with a UR5e + XHand: comparing Gaussian and MuJoCo backgrounds in simulated training demonstrations.</p>
             <div class="gaussian-comparison">
               <div class="comparison-heading">
-                <span>Real-World Validation</span>
                 <h3>Gaussian Background vs. MuJoCo Background</h3>
                 <p>The two conditions differ only in the visual background used for the simulated demonstrations.</p>
               </div>
@@ -210,8 +221,8 @@ realistic manipulation evaluation.</p>
               </div>
             </div>
             <figure class="paper-figure compact-figure">
-              <img src="media/real-world-results.png" alt="Comparison of average progress scores with Gaussian and MuJoCo backgrounds" />
-              <figcaption><strong>Real-world validation.</strong> Average progress scores reported for Gaussian-background and MuJoCo-background settings.</figcaption>
+              <img src="media/experiments/real-world-progress.png" alt="Real-world progress distributions: Gaussian background achieves an average score of 6.6 out of 10; MuJoCo background achieves 1.7 out of 10" loading="lazy" />
+              <figcaption><strong>Progressive score distribution.</strong> Results over 20 real-world trials per condition. Average progress scores are 6.6/10 with Gaussian backgrounds and 1.7/10 with MuJoCo backgrounds.</figcaption>
             </figure>
           </section>
 
