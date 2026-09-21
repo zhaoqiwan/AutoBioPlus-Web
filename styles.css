@@ -24,6 +24,7 @@ body.modal-open { overflow: hidden; }
 .gaussian-retry { position: absolute; z-index: 4; left: 50%; top: 65%; transform: translateX(-50%); padding: 8px 16px; border: 0; border-radius: 6px; background: #2878b8; color: white; cursor: pointer; }
 .gaussian-status { pointer-events: none; max-width: 90%; text-align: center; }
 .site-header { position: sticky; z-index: 10; top: 0; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+.summary-video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid #ccd5dc; border-radius: 12px; background: #111820; object-fit: contain; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1160px; min-height: 58px; margin: auto; padding: 0 24px; }
 .site-brand { display: inline-flex; align-items: center; color: var(--ink); font-weight: 700; }.brand-logo { display: block; width: 132px; height: 36px; object-fit: contain; object-position: left center; }
 .top-nav { display: flex; gap: 24px; color: var(--muted); font-size: .85rem; }.top-nav a:hover { color: var(--blue); }.menu-toggle { display: none; border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; color: var(--muted); background: #fff; }
