@@ -37,7 +37,7 @@
           <a class="toc-link" href="#tasks">Task Benchmark</a>
           <a class="toc-link" href="#visualizations">Task Visualizations</a>
           <a class="toc-link" href="#experiments">Simulation Experiments</a>
-          <a class="toc-link" href="#real-world-validation">Real-World Validation</a>
+          <a class="toc-link" href="#real-world-validation">Effect of Simulation Backgrounds on Real-World Performance</a>
           <a class="toc-link" href="#resources">Resources</a>
         </aside>
 
@@ -173,8 +173,8 @@ realistic manipulation evaluation.</p>
           </section>
 
           <section class="content-section" id="real-world-validation">
-            <h2>Real-World Validation</h2>
-            <p class="section-caption">Tube insertion with a UR5e + XHand: comparing Gaussian and MuJoCo backgrounds in simulated training demonstrations.</p>
+            <h2>Effect of Simulation Backgrounds on Real-World Performance</h2>
+            <p class="section-caption">Both videos show real-world execution of the same base policy(pi 0.5) fine-tuned using simulation data with different visual backgrounds</p>
             <div class="gaussian-comparison">
               <div class="comparison-heading">
                 <h3>Gaussian Background vs. MuJoCo Background</h3>
@@ -182,11 +182,11 @@ realistic manipulation evaluation.</p>
               </div>
               <div class="comparison-videos">
                 <article class="comparison-card">
-                  <h4>Gaussian Background</h4>
+                  <h4>Fine-tuned on Sim Data with 3DGS Backgrounds</h4>
                   <video controls preload="metadata" playsinline aria-label="Tube insertion trained with Gaussian-background simulations"><source src="media/experiments/tube-insertion-with-gaussian.mp4" type="video/mp4"></video>
                 </article>
                 <article class="comparison-card">
-                  <h4>MuJoCo Background</h4>
+                  <h4>Fine-tuned on Sim Data with MuJoCo Backgrounds</h4>
                   <video controls preload="metadata" playsinline aria-label="Tube insertion trained without Gaussian-background simulations"><source src="media/experiments/tube-insertion-without-gaussian.mp4" type="video/mp4"></video>
                 </article>
               </div>
